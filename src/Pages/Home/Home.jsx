@@ -9,9 +9,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useState } from "react";
 import { useEffect } from "react";
-import wa_logo from "../../assets/whatsapp.png";
 import MessengerChatPlugin from "../../Components/MessengerChat";
 import MessengerChat from "../../Components/MessengerChat";
+import WhatsappChat from "../../Components/WhatsappChat";
 const Home = () => {
   const { news, categories } = useLoaderData();
   const { categoryId } = useContext(AuthContext);
@@ -30,17 +30,7 @@ const Home = () => {
 
   return (
     <div className="relative">
-      <div className="fixed bottom-4 right-5 z-10">
-        <Link
-          to="https://wa.me/+8801744424480"
-          className="flex gap-2 items-center"
-        >
-          <p className="bg-gray-100 px-2 py-1 rounded-md">
-            Need Help? <span className="font-semibold">Chat with us</span>
-          </p>
-          <img src={wa_logo} alt="Whatsapp logo" className="w-12 h-12" />
-        </Link>
-      </div>
+      <WhatsappChat />
       {/* <MessengerChatPlugin appId="1196263888185302" pageId="101261925336664" /> */}
       <MessengerChat />
       <div>
